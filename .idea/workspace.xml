@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e1856d-a28e-4637-9625-2135bc5bab50" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/admin.py" afterPath="$PROJECT_DIR$/clients/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/models.py" afterPath="$PROJECT_DIR$/clients/models.py" />
     </list>
     <ignored path="taskman.iws" />
@@ -45,8 +43,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clients/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5646817">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8973306">
+              <caret line="28" column="131" selection-start-line="28" selection-start-column="131" selection-end-line="28" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -609,8 +607,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clients/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5646817">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8973306">
+          <caret line="28" column="131" selection-start-line="28" selection-start-column="131" selection-end-line="28" selection-end-column="131" />
           <folding />
         </state>
       </provider>
