@@ -14,6 +14,7 @@ class Client(models.Model):
                              verbose_name = "Central Excise Regn. No.", unique=True)
     DOB = models.DateField(verbose_name = "Date of Birth / Registration",
                            help_text="Mandatory")
+
     created = models.DateTimeField(auto_now_add = True)
     modified = models.DateTimeField(auto_now = True)
     comments = models.TextField(max_length = 1000,
@@ -76,3 +77,52 @@ class Limited_Company(Client):
 
     def name(self):
         return self.Company_Name
+
+class Address(models.Model):
+    STATES_IN_INDIA = (
+        ('IN-GA','Goa'),
+        ('IN-AP','Andhra Pradesh'),
+        ('IN-AR','Arunachal Pradesh'),
+        ('IN-AS','Assam'),
+        ('IN-BR','Bihar'),
+        ('IN-CT','Chhattisgarh'),
+        ('IN-GJ','Gujarat'),
+        ('IN-HR','Haryana'),
+        ('IN-HP','Himachal Pradesh'),
+        ('IN-JK','Jammu and Kashmir'),
+        ('IN-JH','Jharkhand'),
+        ('IN-KA','Karnataka'),
+        ('IN-KL','Kerala'),
+        ('IN-MP','Madhya Pradesh'),
+        ('IN-MH','Maharashtra'),
+        ('IN-MN','Manipur'),
+        ('IN-ML','Meghalaya'),
+        ('IN-MZ','Mizoram'),
+        ('IN-NL','Nagaland'),
+        ('IN-OR','Odisha'),
+        ('IN-PB','Punjab'),
+        ('IN-RJ','Rajasthan'),
+        ('IN-SK','Sikkim'),
+        ('IN-TN','Tamil Nadu'),
+        ('IN-TG','Telangana'),
+        ('IN-TR','Tripura'),
+        ('IN-UT','Uttarakhand'),
+        ('IN-UP','Uttar Pradesh'),
+        ('IN-WB','West Bengal'),
+        ('IN-AN','Andaman and Nicobar Islands'),
+        ('IN-CH','Chandigarh'),
+        ('IN-DN','Dadra and Nagar Haveli'),
+        ('IN-DD','Daman and Diu'),
+        ('IN-DL','Delhi'),
+        ('IN-LD','Lakshadweep'),
+        ('IN-PY','Puducherry'),
+    )
+
+    Line1 = models.CharField(max_length = 30, blank = False, null = False,
+                            verbose_name = "Address Line 1", help_text="Mandatory",)
+    Line2 = models.CharField(max_length = 30, blank = False, null = False,
+                            verbose_name = "Address Line 2", help_text="Mandatory",)
+    State = models.CharField(max_length = 5, null = False, blank = False,
+                            choices = STATES_IN_INDIA, verbose_name = "State", help_text="Mandatory", default="IN-GA")
+    PIN = models.CharField(max_length = 6, null = False, blank = False,
+                            choices = STATES_IN_INDIA, verbose_name = "State", help_text="Mandatory")
