@@ -19,6 +19,9 @@ class Client(models.Model):
     comments = models.TextField(max_length = 1000,
                                 verbose_name = "User Comments")
 
+    def __str__(self):
+        return self.name()
+
 class Individual(Client):
     GENDER_TYPES = (
         ('m','Male'),
@@ -34,15 +37,27 @@ class Individual(Client):
     Gender = models.CharField(max_length = 1, null = False, blank = False,
                               choices = GENDER_TYPES, verbose_name = "Gender", help_text="Mandatory")
 
+    def name(self):
+        if self.Middle_Name is None:
+            return self.First_Name + " " + self.Last_Name
+        else:
+            return self.First_Name + " " + self.Middle_Name + " " + self.Last_Name
+
 class Partnership(Client):
     Partnership_Name = models.CharField(max_length = 80, blank = False, null = False,
                                         verbose_name = "LLP Name", help_text="Mandatory", unique=True)
+
+    def name(self):
+        return self.Partnership_Name
 
 class LLP(Client):
     LLP_Name = models.CharField(max_length = 80, blank = False, null = False,
                                 verbose_name = "LLP Name", help_text="Mandatory", unique=True)
     LLPIN = models.CharField(max_length = 8, blank = False, null = False,
                              verbose_name = "LLP Identification Number", help_text="Mandatory", unique=True)
+
+    def name(self):
+        return self.LLP_Name
 
 class Limited_Company(Client):
     COMPANY_TYPES = (
@@ -58,3 +73,6 @@ class Limited_Company(Client):
     Company_Type = models.CharField(max_length = 3, blank = False, null = False,
                                     choices = COMPANY_TYPES, verbose_name = "Company Type",
                                     help_text="Mandatory", default="pvt")
+
+    def name(self):
+        return self.Company_Name
